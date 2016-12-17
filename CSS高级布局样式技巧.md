@@ -1,22 +1,23 @@
-## CSS布局样式先进技术
+## CSS高级布局样式技巧
 
 #### 一、empty空元素的样式
-* 1、`.xxx:empty { }` 伪类选择符`empty`
-* 2、`.xxx:not(:empty) { }` 伪类选择符`not`
+* 1、`:empty { }` 伪类选择符`empty`
+* 2、`:not(:empty) { }` 伪类选择符`not`
 
 [空元素样式显示](https://jsbin.com/qerosinawo/1/edit?html,css,output)
 
 
-#### 二、`xx_-of-type`伪类选择符 Pseudo-Classes Selectors
+#### 二、`xx_-of-type`伪类选择符
 * 1、`first-of-type` 匹配同类型中的第一个同级兄弟元素.
 * 2、`last-of-type` 匹配同类型中的最后一个同级兄弟元素.
 * 3、`nth-of-type(n)` 匹配同类型中的第n个同级兄弟元素.
+  * ...3, 3n, odd, 2n+1...
 * 4、`only-of-type`
   * 一个层级只能一个该类型, 否则样式无效
-  * 多层级生效
+  * 多层级有效
 [xx_-of-type](https://jsbin.com/hupulucuza/1/edit?html,css,output)
 
-#### 三、`calc`函数值来布局
+#### 三、`calc`函数值来做流式布局
 * `width: calc(100% - 15rem);`
 
 [calc函数](https://jsbin.com/yixebamoqe/2/edit?html,css,output)
@@ -27,19 +28,31 @@
 
 [vh和vw](https://jsbin.com/gedidaduro/2/edit?html,css,output)
 
-#### 五、`vh`和`vw`的网页应用
+#### 五、`vh`和`vw`的全屏滚动网页应用
 
 [网页应用](https://jsbin.com/hupoyogami/1/edit?html,css,output)
 
-#### 六、`unset`重置样式成上一层级，上一层级没设置该样式，默认的
-* 重置成上一层级该属性值，上一层级没找到该属性值，重置成默认的
+#### 六、`unset`做CSS重置
+* 重置成上一层级样式，上一层级没设置该样式，Reset到默认样式
 
 [unset](https://jsbin.com/falatalana/1/edit?html,css,output)
 
 #### 七、`background-blend-mode` 混合模式
 
 
-#### 八、响应布局的Columns列
+#### 八、column列做响应布局
+```
+nav {
+  /* column-count: 4;
+  column-width: 150px; */
 
+  columns: 4 150px;
 
-[原文地址](https://egghead.io/courses/learn-advanced-css-layout-techniques)
+  column-gap: 2rem;
+  column-rule: 1px dashed #ccc;
+  column-fill: auto;
+}
+```
+[column列做响应布局](https://jsbin.com/makanizimo/2/edit?html,css,output)
+
+[原教程地址](https://egghead.io/courses/learn-advanced-css-layout-techniques)
